@@ -4,7 +4,6 @@ import DashboardLayout from '@/components/DashboardLayout';
 import { DataTable } from '@/components/MainTable';
 import { columns } from '@/components/Columns';
 import { UserData } from '@/lib/type';
-import { Button } from '@/components/ui/button';
 
 // NOTA : las funciones como crear es algo complejo ponerlas de lado del servidor porque se tendrian que ejecutar automaticamente
 

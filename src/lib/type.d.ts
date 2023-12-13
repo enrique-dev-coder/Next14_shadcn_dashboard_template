@@ -16,3 +16,8 @@ export type UserData = {
     authorId: string;
   }[];
 };
+
+export type NewUser = {
+  name: string | null;
+  email: string;
+};
