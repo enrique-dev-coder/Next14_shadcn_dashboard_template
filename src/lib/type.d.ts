@@ -21,3 +21,7 @@ export type NewUser = {
   name: string | null;
   email: string;
 };
+
+export type SearchValue = {
+  search: string;
+};

@@ -32,7 +32,7 @@ export function DataTable({ columns, data }: DataTableProps) {
   });
 
   // asi obtienes el estado de la Tabla
-  console.log(table.getState());
+  // console.log(table.getState());
 
   return (
     <div className="relative">
