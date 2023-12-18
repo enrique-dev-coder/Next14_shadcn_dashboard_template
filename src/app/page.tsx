@@ -6,6 +6,10 @@ import { DataTable } from '@/components/MainTable';
 import { columns } from '@/components/Columns';
 import { UserData } from '@/lib/type';
 
+// acceder a la sesion atraves del server
+// import { getServerSession } from 'next-auth';
+// import { authOptions } from './api/auth/[...nextauth]/route';
+
 // NOTA : las funciones como crear es algo complejo ponerlas de lado del servidor porque se tendrian que ejecutar automaticamente
 
 // const createUser = await prisma.user.create({
@@ -49,6 +53,9 @@ export default async function Home({
     },
   });
 
+  // obtner la info de la session
+  // const session = await getServerSession(authOptions);
+
   // // GET USERS
   // const allUsers: UserData[] = await prisma.user.findMany({
   //   include: {
@@ -57,14 +64,16 @@ export default async function Home({
   // });
 
   return (
-    <DashboardLayout>
-      <div>
-        <div className="p-2 flex justify-between">
-          <SearchBar />
-          <AddUserModal />
+    <>
+      <DashboardLayout>
+        <div>
+          <div className="p-2 flex justify-between">
+            <SearchBar />
+            <AddUserModal />
+          </div>
+          <DataTable columns={columns} data={allUsersSearched} />
         </div>
-        <DataTable columns={columns} data={allUsersSearched} />
-      </div>
-    </DashboardLayout>
+      </DashboardLayout>
+    </>
   );
 }
